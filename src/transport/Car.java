@@ -28,24 +28,33 @@ public class Car extends Transport {
         return true;
     }
 
-    public Car(
-            String color,
-            String transmission,
-            String registrationNumber,
-            boolean seasonTires,
-            String brand,
-            String model,
-            Integer productionYear,
-            String productionCountry,
-            String bodyType,
-            int numberOfSeats) {
-        super(brand, model, productionYear, productionCountry, color);
+    @Override
+    public void refill() {
+        if (getTypeOfFuel().equals("gas")){
+            System.out.println("Заправка бензином");
+        } else {
+            System.out.println("Зарядка электромобиля");
+        }
+    }
+
+    public Car(String color,
+        String transmission,
+        String registrationNumber,
+        boolean seasonTires,
+        String brand,
+        String model,
+        Integer productionYear,
+        String productionCountry,
+        String bodyType,
+        int numberOfSeats,
+        String typeOfFuel) {
+        super(brand, model, productionYear, productionCountry, color, typeOfFuel);
+        this.engineVolume = engineVolume;
         this.transmission = transmission;
         this.bodyType = bodyType;
         this.registrationNumber = registrationNumber;
         this.numberOfSeats = numberOfSeats;
         this.seasonTires = seasonTires;
-
     }
 
     public double getEngineVolume() {

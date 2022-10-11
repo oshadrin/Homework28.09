@@ -1,20 +1,26 @@
 package transport;
 
-public class Transport {
+public abstract class Transport {
     private String brand;
     private String model;
     private Integer productionYear;
     private String productionCountry;
     private String color;
     private int maxSpeed;
+    private String typeOfFuel;
 
-    public Transport(String brand, String model, Integer productionYear, String productionCountry, String color) {
+    public abstract void refill();
+
+    public Transport(String brand, String model, Integer productionYear, String productionCountry, String color, String typeOfFuel) {
         this.brand = brand;
         this.model = model;
         this.productionYear = productionYear;
         this.productionCountry = productionCountry;
         this.color = color;
+        this.typeOfFuel = typeOfFuel;
     }
+
+
 
     public void setBrand(String brand) {
         if(this.brand == null || this.brand.isEmpty()){
@@ -42,6 +48,10 @@ public class Transport {
 
     public void setMaxSpeed(int maxSpeed) {
             this.maxSpeed = maxSpeed;
+    }
+
+    public String getTypeOfFuel() {
+        return typeOfFuel;
     }
 
     public String getBrand() {

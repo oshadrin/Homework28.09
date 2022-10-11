@@ -1,4 +1,5 @@
 import transport.Car;
+import transport.Transport;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -18,19 +19,20 @@ public class Main {
         arr[3] = gypsophila;
         calculateValue(arr);
 
+
         Car[] arr2 = new Car[2];
-        Car bmw = new Car("black", "hand", "H912PC777", true, "bmw", "xd520", 2020, "Germany", "sedan", 5);
-        Car audi = new Car("white", "automatic", "C223PC177", false, "audi", "rx", 2021, "Germany", "sedan", 5);
+        Car bmw = new Car("black", "hand", "H912PC777", true, "bmw", "xd520", 2020, "Germany", "sedan", 5, "gas");
+        Car audi = new Car("white", "automatic", "C223PC177", false, "audi", "rx", 2021, "Germany", "sedan", 5, "electric");
         arr2[0] = bmw;
         arr2[1] = audi;
         bmw.changeTires();
         audi.changeTires();
         bmw.checkNumber();
         audi.checkNumber();
-
+        bmw.refill();
+        audi.refill();
         Car.Insurance insurance = new Car.Insurance(LocalDate.of(2022, 10,1), 10500, "928398276");
         bmw.setInsurance(insurance);
-
 
     }
     public static void calculateValue(Flower arr[]) {
