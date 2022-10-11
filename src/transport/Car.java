@@ -3,13 +3,8 @@ package transport;
 import java.security.Key;
 import java.time.LocalDate;
 
-public class Car {
-    private final String brand;
-    private final String model;
+public class Car extends Transport {
     private double engineVolume;
-    private String color;
-    private final Integer productionYear;
-    private final String productionCountry;
     private String transmission;
     private final String bodyType;
     private String registrationNumber = "X000XX000";
@@ -20,10 +15,6 @@ public class Car {
 
     public void setInsurance(Insurance insurance) {
         this.insurance = insurance;
-    }
-
-    public static boolean isNullOrEmpty(String value) {
-        return value == null || value.isBlank();
     }
 
     public boolean checkNumber() {
@@ -38,21 +29,23 @@ public class Car {
     }
 
     public Car(
-            String color, String transmission, String registrationNumber, boolean seasonTires,
-            String brand, String model, Integer productionYear, String productionCountry, String bodyType, int numberOfSeats) {
-        if (isNullOrEmpty(brand)) {
-            this.color = "black";
-        } else this.color = color;
-
-        this.brand = brand;
-        this.model = model;
-        this.productionYear = productionYear;
-        this.productionCountry = productionCountry;
-        this.bodyType = bodyType;
-        this.numberOfSeats = numberOfSeats;
+            String color,
+            String transmission,
+            String registrationNumber,
+            boolean seasonTires,
+            String brand,
+            String model,
+            Integer productionYear,
+            String productionCountry,
+            String bodyType,
+            int numberOfSeats) {
+        super(brand, model, productionYear, productionCountry, color);
         this.transmission = transmission;
+        this.bodyType = bodyType;
         this.registrationNumber = registrationNumber;
+        this.numberOfSeats = numberOfSeats;
         this.seasonTires = seasonTires;
+
     }
 
     public double getEngineVolume() {
@@ -61,14 +54,6 @@ public class Car {
 
     public void setEngineVolume(double engineVolume) {
         this.engineVolume = engineVolume;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public String getTransmission() {
@@ -93,22 +78,6 @@ public class Car {
 
     public void setSeasonTires(boolean seasonTires) {
         this.seasonTires = seasonTires;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public Integer getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
     }
 
     public String getBodyType() {
