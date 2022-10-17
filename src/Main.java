@@ -110,9 +110,7 @@ public class Main {
         for (int i = 0; i < herbivores.length; i++) {
             for (int j = i + 1; j < herbivores.length; j++) {
                 if (herbivores[i] == herbivores[j]) {
-                    System.out.println("Травоядные не уникальны");
-                } else {
-                    System.out.println("Все травоядные уникальны");
+                    System.out.println("Травоядные" + herbivores[i] + " и " + herbivores[j] + " не уникальны");
                 }
             }
         }
