@@ -114,17 +114,6 @@ public class Main {
                 } else {
                     System.out.println("Все травоядные уникальны");
                 }
-//        if(herbivores[0] == herbivores[1]) {
-//            System.out.println("Травоядные не уникальны");
-//        }
-//        if(herbivores[1] == herbivores[2]) {
-//            System.out.println("Травоядные не уникальны");
-//        }
-//        if(herbivores[0] == herbivores[2]) {
-//            System.out.println("Травоядные не уникальны");
-//        } else {
-//            System.out.println("Все травоядные уникальны");
-//        }
             }
         }
     }
